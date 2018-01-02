@@ -1,0 +1,6 @@
+dlib==19.7.0
+numpy==1.13.3
+scikit_image==0.13.1
+opencv_python==3.3.0.10
+Pillow==4.3.0
+skimage==0.0
