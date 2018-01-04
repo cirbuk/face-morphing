@@ -14,6 +14,7 @@ python3 __init__.py face/body path_to_first_image path_to_second_image duration_
 ```
 - Note that presently only **face** is allowed as first argument.
 - Also instead of the path to image file, Python **File Object** of that image can also be passed in as an argument.
+
 Examples
 -------------
 ![A photo of Ben Affleck](https://raw.githubusercontent.com/KubricIO/face-morphing/master/demos/ben.jpg)
@@ -22,13 +23,15 @@ Using the below command you can generate a video depicting morphing.
 ```
 python3 __init__.py face ben.jpg morgan.jpg 5 25 morphing-example.mp4
 ```
-![Morphed Video](https://raw.githubusercontent.com/KubricIO/face-morphing/master/demos/morphing-example.mp4)
+![Morphed Video](https://raw.githubusercontent.com/KubricIO/face-morphing/master/demos/morphing-example.gif)
+
 How It Works
 -------------
 1. Find point-to-point correspondences between the two images using Dlib's **Facial Landmark Detection**.
 2. Find the **Delaunay Triangulation** for the average of these points.
 3. Using these corresponding triangles in both initial and final images, perform **Warping** and **Alpha Blending** and obtain intermediate images to be used in creating videos.
 4. Use **ffmpeg** to return a video from above created frames.
+
 Requirements
 -------------
 These are the requirements apart from what is mentioned in *requirements.txt* :
